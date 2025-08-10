@@ -27,6 +27,9 @@ spec:
           limits:
             memory: "256Mi"
             cpu: "150m"
+        volumeMounts:
+          - name: data
+            mountPath: /app/data
         env:
         - name: PYTHONUNBUFFERED
           valueFrom:
@@ -52,3 +55,7 @@ spec:
             port: 8080
           initialDelaySeconds: 5
           periodSeconds: 5
+      volumes:
+        - name: data
+          persistentVolumeClaim:
+            claimName: pvc-data
