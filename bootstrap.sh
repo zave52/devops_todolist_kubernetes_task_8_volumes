@@ -1,5 +1,8 @@
 #!/bin/bash
 
+echo "Creating todoapp namespace..."
+kubectl create namespace todoapp
+
 echo "Applying PersistentVolume..."
 kubectl apply -f .infrastructure/pv.yml
 
