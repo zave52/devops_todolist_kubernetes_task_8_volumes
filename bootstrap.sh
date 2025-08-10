@@ -10,7 +10,7 @@ echo "Applying Secret..."
 kubectl apply -f .infrastructure/secret.yml
 
 echo "Applying ConfigMap..."
-kubectl apply -f .infrastructure/confgiMap.yml
+kubectl apply -f .infrastructure/configMap.yml
 
 echo "Applying Deployment..."
 kubectl apply -f .infrastructure/deployment.yml
