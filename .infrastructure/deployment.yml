@@ -33,6 +33,9 @@ spec:
           - name: app-config-volume
             mountPath: /app/configs
             readOnly: True
+          - name: app-secrets-volume
+            mountPath: /app/secrets
+            readOnly: True
         env:
         - name: PYTHONUNBUFFERED
           valueFrom:
@@ -65,3 +68,6 @@ spec:
         - name: app-config-volume
           configMap:
             name: app-config
+        - name: app-secrets-volume
+          secret:
+            secretName: app-secret
