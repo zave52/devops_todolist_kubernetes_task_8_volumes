@@ -30,6 +30,9 @@ spec:
         volumeMounts:
           - name: data
             mountPath: /app/data
+          - name: app-config-volume
+            mountPath: /app/configs
+            readOnly: True
         env:
         - name: PYTHONUNBUFFERED
           valueFrom:
@@ -59,3 +62,6 @@ spec:
         - name: data
           persistentVolumeClaim:
             claimName: pvc-data
+        - name: app-config-volume
+          configMap:
+            name: app-config
